@@ -20,5 +20,10 @@ module SuccessiveLifeClient
       data = JSON.parse(@conn.get("/api/v1/github_goals/#{user_id}").body)
       GithubGoal.new(data)
     end
+
+    def find_all_users
+      data = JSON.parse(@conn.get("/api/v1/users").body)
+      User.new(data)
+    end
   end
 end

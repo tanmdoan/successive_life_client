@@ -8,6 +8,13 @@ class ClientTest < Minitest::Test
     assert SuccessiveLifeClient::Client
   end
 
+  def test_it_find_all_users
+    client = SuccessiveLifeClient::Client.new('http://localhost:3000')
+    users = client.find_users
+    assert_equal 'Tan the maaaan', users.all.first["name"]
+    assert_equal 1, users.all.first["id"]
+  end
+
   def test_it_finds_all_github_goals
     client = SuccessiveLifeClient::Client.new('http://localhost:3000')
     github_goals = client.find_github_goals

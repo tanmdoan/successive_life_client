@@ -18,11 +18,26 @@ Or install it yourself as:
 
 ## Usage
 
+How to spin up a client:
 ```
 client = SuccessiveLifeClient::Client.new(https://104.131.83.243)
+```
 
+To query all users:
+```
+client.find_all_users.all
+```
+
+To find all github goals on the application:
+```
 client.find_github_goals.all
 ```
+
+Once you have your user id to query their github goals data:
+```
+client.find_github_goal([user_id])
+```
+Replace [user_id] integer corresponding to the interested user's id number
 
 
 
