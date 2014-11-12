@@ -1,6 +1,6 @@
 # SuccessiveLifeClient
 
-TODO: Write a gem description
+Successive life client is used to simplify queries to the Successive Life Api.
 
 ## Installation
 
@@ -18,7 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+client = SuccessiveLifeClient::Client.new(https://104.131.83.243)
+
+client.find_github_goals.all
+```
+
+
 
 ## Contributing
 
