@@ -8,12 +8,6 @@ class ClientTest < Minitest::Test
     assert SuccessiveLifeClient::Client
   end
 
-  def test_it_find_all_users
-    client = SuccessiveLifeClient::Client.new('http://localhost:3000')
-    users = client.find_users
-    assert_equal 'Tan the maaaan', users.all.first["name"]
-    assert_equal 1, users.all.first["id"]
-  end
 
   def test_it_finds_all_github_goals
     client = SuccessiveLifeClient::Client.new('http://localhost:3000')
@@ -23,8 +17,23 @@ class ClientTest < Minitest::Test
 
   def test_it_finds_a_single_github_goal
     client = SuccessiveLifeClient::Client.new('http://localhost:3000')
-    github_goal = client.find_github_goal('1001')
-    assert_equal 1200, github_goal.streak
+    github_goal = client.find_github_goal('1')
+    assert_equal 8, github_goal.streak
   end
+
+  def test_it_find_all_users
+    client = SuccessiveLifeClient::Client.new('http://localhost:3000')
+    users = client.find_users
+    assert_equal 'Tan the maaaan', users.all.first["name"]
+    assert_equal 'tan@example.com', users.all.first["email"]
+  end
+
+  def test_it_finds_a_single_user
+    client = SuccessiveLifeClient::Client.new('http://localhost:3000')
+    github_goal = client.find_user('1')
+    assert_equal 'Tan the maaaan', github_goal.name
+  end
+
+
 
 end

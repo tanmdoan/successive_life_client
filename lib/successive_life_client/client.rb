@@ -1,6 +1,7 @@
 require 'json'
 require 'faraday'
 require './lib/successive_life_client/github_goal'
+require './lib/successive_life_client/user'
 
 module SuccessiveLifeClient
   class Client
@@ -21,8 +22,13 @@ module SuccessiveLifeClient
       GithubGoal.new(data)
     end
 
-    def find_all_users
+    def find_users
       data = JSON.parse(@conn.get("/api/v1/users").body)
+      User.new(data)
+    end
+
+    def find_user(id)
+      data = JSON.parse(@conn.get("/api/v1/users/#{id}").body)
       User.new(data)
     end
   end

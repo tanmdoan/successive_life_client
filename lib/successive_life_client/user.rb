@@ -9,5 +9,9 @@ module SuccessiveLifeClient
       data
     end
 
+    def name
+      data["name"]
+    end
+
   end
 end
