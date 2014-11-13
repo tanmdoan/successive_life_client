@@ -24,4 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_dependency 'faraday'
   spec.add_dependency 'json'
+  spec.add_dependency 'vcr'
+  spec.add_dependency 'webmock'
 end

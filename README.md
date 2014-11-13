@@ -44,7 +44,9 @@ client.find_github_goal([user_id])
 ```
 Replace [user_id] integer corresponding to the interested user's id number
 
+## Notes On Testing
 
+If you are running tests without the application running on your local machine you must replace the http://localhost:3000 with http://104.131.83.243 within the ```./test/client_test.rb``` file.
 
 ## Contributing
 
