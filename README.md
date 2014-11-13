@@ -25,7 +25,12 @@ client = SuccessiveLifeClient::Client.new(https://104.131.83.243)
 
 To query all users:
 ```
-client.find_all_users.all
+client.find_users.all
+```
+
+You may also query a single user if you knew the user's id:
+```
+client.find_user(id)
 ```
 
 To find all github goals on the application:
